@@ -1,11 +1,12 @@
 class Shape {
 
-  constructor(color) {
+  constructor(color, radius) {
     this.color = color;
+    this.radius = radius;
   }
 
   move() {
-    console.log('move');
+    console.log('Shape move');
   }
 }
 
@@ -13,8 +14,13 @@ const s = new Shape();
 
 
 class Circle extends Shape {
-  constructor(color) {
-    super(color)
+  constructor(color, radius) {
+    super(color, radius)
+  }
+
+  move() {
+    super.move();
+    console.log('circle move');
   }
 
   draw() {
@@ -22,6 +28,8 @@ class Circle extends Shape {
   }
 }
 
-const c = new Circle('red');
+const c = new Circle('red', 1);
 
 c.draw();
+
+c.move();
